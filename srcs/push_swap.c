@@ -6,7 +6,7 @@
 /*   By: jleroux <jleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 10:59:05 by jleroux           #+#    #+#             */
-/*   Updated: 2022/06/29 13:55:07 by jleroux          ###   ########.fr       */
+/*   Updated: 2022/06/29 14:34:08 by jleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,12 @@ static int	check_lengths(t_stack stack)
 	return (0);
 }
 
-static int	error(t_stack *stack)
+static int	error(t_stack *stack, char **strs)
 {
 	if (stack->arr)
 		free(stack->arr);
+	if (strs)
+		free_strs(strs);
 	write(2, "Error\n", 6);
 	return (1);
 }
@@ -60,20 +62,21 @@ int	main(int argc, char **argv)
 	t_stack	a;
 	char	**strs;
 
+	strs = NULL;
 	if (argc < 2)
-		return (error(&a));
+		return (error(&a, strs));
 	else if (argc == 2)
 		strs = ft_split(argv[1], ' ');
 	else
 		strs = copy_strs(argv, argc);
 	if (!check_input(strs))
-		return (error(&a));
+		return (error(&a, strs));
 	a.size = count_arr(strs);
 	a.arr = strs_to_ints(strs);
 	if (check_lengths(a))
-		return (error(&a));
+		return (error(&a, strs));
 	if (check_unique(a))
-		return (error(&a));
+		return (error(&a, strs));
 	sort(&a);
 	free(a.arr);
 	free_strs(strs);

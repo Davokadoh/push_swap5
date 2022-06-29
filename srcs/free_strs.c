@@ -6,7 +6,7 @@
 /*   By: jleroux <jleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 16:34:12 by jleroux           #+#    #+#             */
-/*   Updated: 2022/06/29 13:46:26 by jleroux          ###   ########.fr       */
+/*   Updated: 2022/06/29 14:26:13 by jleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	free_strs(char **strs)
 	i = 0;
 	while (strs[i] != NULL)
 	{
-		free(strs[i]);
+		if (strs[i])
+			free(strs[i]);
 		i++;
 	}
 	free(strs);
