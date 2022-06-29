@@ -62,6 +62,19 @@ $(LIBFT_DIR)/libft.a:
 test: re
 	./$(TARGET) 5 4 3 2 1 | ./checker_Mac 5 4 3 2 1
 
+CHECKER_PROGRAM = "./checker_Mac"
+100: $(TARGET)
+	$(shell ruby -e "puts (100..199).to_a.shuffle.join(' ')" > test/100.txt)
+	@./push_swap $(shell cat "test/100.txt") | wc -l
+	@./push_swap $(shell cat "test/100.txt") \
+		| $(CHECKER_PROGRAM) $(shell cat "test/100.txt")
+
+500: $(TARGET)
+	$(shell ruby -e "puts (100..599).to_a.shuffle.join(' ')" > test/500.txt)
+	@./push_swap $(shell cat "test/500.txt") | wc -l
+	@./push_swap $(shell cat "test/500.txt") \
+		| $(CHECKER_PROGRAM) $(shell cat "test/500.txt")
+
 norminette:
 	-norminette $(SRCS) ft_printf.h
 	-norminette $(LIBFT_DIR)

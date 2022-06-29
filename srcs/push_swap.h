@@ -6,7 +6,7 @@
 /*   By: jleroux <jleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 10:59:18 by jleroux           #+#    #+#             */
-/*   Updated: 2022/06/29 13:48:36 by jleroux          ###   ########.fr       */
+/*   Updated: 2022/06/29 15:03:22 by jleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef struct s_stack
 {
-	long int	*arr;
+	long long	*arr;
 	int			size;
 }				t_stack;
 
@@ -32,13 +32,13 @@ int			is_sorted(t_stack *stack);
 int			get_smallest(t_stack *stack);
 int			get_biggest(t_stack *stack);
 int			count_arr(char **arr);
-long int	*strs_to_ints(char **strs);
+long long	*strs_to_ints(char **strs);
 void		chunk_to_b(t_stack *a, t_stack *b);
 void		bubble_sort(t_stack *stack);
 void		smart_rotate(char ch, t_stack *stack, int target);
 void		sort(t_stack *a);
-void		shift_left(long int *arr, int size);
-void		shift_right(long int *arr, int size);
+void		shift_left(long long *arr, int size);
+void		shift_right(long long *arr, int size);
 void		rotate(char ch, t_stack *stack);
 void		push(char ch, t_stack *src, t_stack *dst);
 void		swap(char ch, t_stack *stack);

@@ -6,11 +6,11 @@
 /*   By: jleroux <jleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 10:59:29 by jleroux           #+#    #+#             */
-/*   Updated: 2022/06/29 13:45:31 by jleroux          ###   ########.fr       */
+/*   Updated: 2022/06/29 15:04:02 by jleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	shift_left(long int *arr, int size)
+void	shift_left(long long *arr, int size)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ void	shift_left(long int *arr, int size)
 	}
 }
 
-void	shift_right(long int *arr, int size)
+void	shift_right(long long *arr, int size)
 {
 	int	i;
 

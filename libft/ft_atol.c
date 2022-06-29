@@ -6,13 +6,13 @@
 /*   By: jleroux <jleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 14:37:46 by jleroux           #+#    #+#             */
-/*   Updated: 2022/06/29 13:44:38 by jleroux          ###   ########.fr       */
+/*   Updated: 2022/06/29 15:06:22 by jleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-long int	ft_atol(const char *str)
+long long	ft_atol(const char *str)
 {
 	int				sign;
 	long long int	nbr;
@@ -33,9 +33,5 @@ long int	ft_atol(const char *str)
 		nbr += *str - '0';
 		str++;
 	}
-	if (nbr > 4294967296 && sign == -1)
-		return (0);
-	if (nbr > 4294967296 && sign == 1)
-		return (-1);
 	return (nbr * sign);
 }

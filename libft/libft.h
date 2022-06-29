@@ -6,7 +6,7 @@
 /*   By: jleroux <jleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:13:53 by jleroux           #+#    #+#             */
-/*   Updated: 2022/06/29 13:43:39 by jleroux          ###   ########.fr       */
+/*   Updated: 2022/06/29 15:00:18 by jleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 
-long int	ft_atol(const char *str);
+long long	ft_atol(const char *str);
 int			ft_atoi(const char *str);
 void		ft_bzero(void *b, int len);
 int			ft_isalnum(int c);

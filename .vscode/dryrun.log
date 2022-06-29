@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/jleroux/Workspace/push_swap5'
+make: Nothing to be done for `all'.
+ 
+make: Leaving directory `/Users/jleroux/Workspace/push_swap5'
+ 
